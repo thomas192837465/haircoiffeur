@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+        }
+        video {
+            
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 60px); /* Hauteur totale moins la hauteur de la barre de navigation */
+            object-fit: cover; /* Pour couvrir toute la fenêtre sans déformation */
+            z-index: -1; /* Mettre la vidéo en arrière-plan */
+        }
+      
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: center; /* Centrer les éléments horizontalement */
+            position: relative; /* Pour empiler au-dessus de la vidéo */
+            z-index: 1; /* Mettre la barre de navigation au-dessus de la vidéo */
+        }
+        nav img{
+            width: 70px;
+            height: 70px;
+        }
+
+        nav a {
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 16px; /* Taille du texte dans la barre de navigation */
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .logo {
+            margin: 0 auto;
+            max-height: 16px; /* Taille maximale du logo pour correspondre à la taille du texte */
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px;
+            
+        }
+
+        .text-content {
+            max-width: 60%;
+            color: white;
+            text-align: justify;
+        }
+
+        .text-content h2, .text-content p {
+            margin-bottom: 10px;
+            
+        }
+        .text-content h2{
+            text-shadow:0 0 2px #FFD100,0 0 30px #FFD100,0px 0px 5px #FFD100, 0 0 150px #FFD100;color:#FFD100;
+             
+
+        }
+        .text-content h1{
+            text-shadow:#ffe69a 0 -1px 0,
+            
+            #ff6767 2px 2px 0,
+            #ca3333 3px 3px 0,
+            #770a0c 4px 4px 0,
+            #333 5px 5px 10px;color:#FFE5BF;
+            
+        }
+
+        .image-content {
+            max-width: 30%;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .image-scroll {
+            overflow-x: hidden;
+            white-space: nowrap;
+            padding: 20px;
+            background-color: #000000;
+            width: 100%; /* Occuper toute la largeur disponible */
+            animation: scrollImages 20s linear infinite; /* Animation de défilement automatique */
+        }
+
+        @keyframes scrollImages {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-500%); /* Défilement complet vers la gauche */
+            }
+        }
+
+        .image-scroll img {
+            display: inline-block;
+            margin-right: 10px; /* Espace entre les images */
+            width: 349px;
+            height: 232px;
+        }
+        .color-bar {
+            height: 10px; /* Hauteur de la barre de couleur */
+            background-color: #00ff00; /* Couleur verte */
+            width: 100%;
+        }
+
+        .neon {
+            box-shadow: 0 0 5px #00ff00,
+                        0 0 10px #00ff00,
+                        0 0 15px #00ff00,
+                        0 0 20px #00ff00,
+                        0 0 30px #00ff00;
+        }
+        
+
+        @media screen and (max-width: 600px) {
+            .main-content {
+                flex-direction: column; /* Empiler les éléments en colonne sur les petits écrans */
+            }
+
+            .text-content, .image-content {
+                max-width: 100%;
+            }
+            .image-scroll {
+                overflow-x: auto; /* Activer le défilement horizontal sur les petits écrans */
+                white-space: nowrap;
+            }
+        }
+        
+       
+    </style>
+</head>
+<body>
+
+
+
+<nav>
+    <a href="#salon">Le Salon</a>
+    <a href="#equipe">L'Équipe</a>
+    <a href="#" class="logo"><img src="logo.jpg" alt="Logo de l'entreprise" width="70px" height="70px"></a>
+    <a href="#prix">Les Prix</a>
+    <a href="#contact">Contact</a>
+</nav>
+<video autoplay muted loop>
+    <source src="Barbershop 5 Étoiles - Salon de barbier 5 Étoiles à Laval (Grand Montréal).mp4" type="video/mp4">
+    Votre navigateur ne prend pas en charge la balise vidéo.
+</video>
+
+<div class="main-content">
+    <div class="text-content">
+        <h2>Hair Coiff</h2>
+        <h1>Salon de Coiffure</h1>
+        <p>Niché au cœur de la charmante ville de Nantes, notre salon de coiffure, baptisé 'Éclat Capillaire', offre une expérience unique dédiée à la beauté et au bien-être capillaire. Situé dans un quartier animé et cosmopolite, notre établissement se distingue par son atmosphère chaleureuse et son équipe de coiffeurs passionnés.
+
+            Dès que vous franchissez la porte, vous êtes accueilli par une ambiance moderne et élégante. Les murs sont ornés de miroirs délicatement éclairés, créant une atmosphère détendue et conviviale. L'éclairage tamisé et la musique apaisante créent un environnement propice à la détente, où nos clients peuvent s'évader du quotidien et se consacrer pleinement à leur moment de beauté.</p>
+    </div>
+    <div class="image-content">
+        <img src="super-Coiffeur-femme-nantes.gif" alt="Image du salon de coiffure">
+    </div>
+</div>
+<div class="color-bar neon"></div>
+<div class="image-scroll">
+    <img src="sal1.jpg" alt="Image 1" width="349px"height="232">
+    <img src="sal2.jpeg" alt="Image 2"width="349px"height="232">
+    <img src="sal3.jpg" alt="Image 3"width="349px"height="232">
+    <img src="sal4.jpg" alt="Image 3"width="349px"height="232">
+    <img src="sal5.jpg" alt="Image 3"width="349px"height="232">
+    <img src="sal6.jpg" alt="Image 3"width="349px"height="232">
+    <!-- Ajoutez autant d'images que nécessaire -->
+</div>
+<!-- Début de widget de badge Calendly -->
+
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/hairnaturel?background_color=0d0c0c&text_color=f7e9e9', text: 'Prends rendez-vous en ligne !!', color: '#0069ff', textColor: '#ffffff', branding: true }); }</script>
+<!-- Fin de widget de badge Calendly -->
+<!-- Ajoutez le reste du contenu de votre page ici -->
+
+</body>
+</html>
+
